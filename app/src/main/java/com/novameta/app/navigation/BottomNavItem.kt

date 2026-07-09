@@ -1,0 +1,19 @@
+package com.novameta.gg.navigation
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.ui.graphics.vector.ImageVector
+
+data class BottomNavItem(
+    val label: String,
+    val icon: ImageVector,
+    val route: String
+)
+
+val bottomNavItems = listOf(
+    BottomNavItem("Inicio",     Icons.Filled.Home,          Routes.Home.route),
+    BottomNavItem("Guías",      Icons.Filled.MenuBook,      Routes.Guides.route),
+    BottomNavItem("Campeones",  Icons.Filled.Shield,        Routes.Champions.route),
+    BottomNavItem("Tier List",  Icons.Filled.BarChart,      Routes.TierList.route),
+    BottomNavItem("Más",        Icons.Filled.MoreHoriz,     "more")
+)
