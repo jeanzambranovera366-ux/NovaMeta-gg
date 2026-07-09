@@ -1,0 +1,107 @@
+package com.novameta.gg.ui.theme
+
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+
+// ── Colores NovaMeta ──────────────────────────────────────────
+val BgDark        = Color(0xFF0D0D1A)
+val BgSurface     = Color(0xFF1A1A2E)
+val BgCard        = Color(0xFF16213E)
+val PurpleNeon    = Color(0xFF7C3AED)
+val PurpleLight   = Color(0xFF9D5CF6)
+val CyanAccent    = Color(0xFF00D4FF)
+val GoldAccent    = Color(0xFFFFD700)
+val TextPrimary   = Color(0xFFFFFFFF)
+val TextSecondary = Color(0xFFB0B0C8)
+val TextMuted     = Color(0xFF6B6B8A)
+val TierS         = Color(0xFFFF4444)
+val TierA         = Color(0xFFFF8C00)
+val TierB         = Color(0xFFFFD700)
+val TierC         = Color(0xFF4CAF50)
+val TierD         = Color(0xFF2196F3)
+val WinColor      = Color(0xFF4CAF50)
+val LossColor     = Color(0xFFFF4444)
+val Divider       = Color(0xFF2A2A3E)
+
+// ── ColorScheme oscuro ────────────────────────────────────────
+private val NovaMetaDarkColors = darkColorScheme(
+    primary          = PurpleNeon,
+    onPrimary        = TextPrimary,
+    primaryContainer = PurpleLight,
+    secondary        = CyanAccent,
+    onSecondary      = BgDark,
+    background       = BgDark,
+    onBackground     = TextPrimary,
+    surface          = BgSurface,
+    onSurface        = TextPrimary,
+    surfaceVariant   = BgCard,
+    onSurfaceVariant = TextSecondary,
+    outline          = Divider,
+    error            = LossColor,
+    onError          = TextPrimary
+)
+
+// ── Tipografía ────────────────────────────────────────────────
+val NovaMetaTypography = Typography(
+    headlineLarge = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 28.sp,
+        fontWeight = FontWeight.Bold,
+        letterSpacing = 0.5.sp
+    ),
+    headlineMedium = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 22.sp,
+        fontWeight = FontWeight.Bold
+    ),
+    headlineSmall = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 18.sp,
+        fontWeight = FontWeight.SemiBold
+    ),
+    titleLarge = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 16.sp,
+        fontWeight = FontWeight.SemiBold
+    ),
+    titleMedium = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 14.sp,
+        fontWeight = FontWeight.Medium
+    ),
+    bodyLarge = TextStyle(
+        color    = TextSecondary,
+        fontSize = 14.sp
+    ),
+    bodyMedium = TextStyle(
+        color    = TextSecondary,
+        fontSize = 12.sp
+    ),
+    bodySmall = TextStyle(
+        color    = TextMuted,
+        fontSize = 11.sp
+    ),
+    labelLarge = TextStyle(
+        color      = TextPrimary,
+        fontSize   = 12.sp,
+        fontWeight = FontWeight.Medium
+    ),
+    labelSmall = TextStyle(
+        color    = TextMuted,
+        fontSize = 10.sp
+    )
+)
+
+// ── Tema principal ────────────────────────────────────────────
+@Composable
+fun NovaMetaTheme(content: @Composable () -> Unit) {
+    MaterialTheme(
+        colorScheme = NovaMetaDarkColors,
+        typography  = NovaMetaTypography,
+        content     = content
+    )
+}
