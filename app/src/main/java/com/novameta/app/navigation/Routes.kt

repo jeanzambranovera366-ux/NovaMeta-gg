@@ -1,0 +1,24 @@
+package com.novameta.gg.navigation
+
+sealed class Routes(val route: String) {
+    // ── Bottom Nav ──────────────────────────────
+    object Home        : Routes("home")
+    object Guides      : Routes("guides")
+    object Champions   : Routes("champions")
+    object TierList    : Routes("tierlist")
+
+    // ── Drawer ──────────────────────────────────
+    object Analysis    : Routes("analysis")
+    object Runes       : Routes("runes")
+    object Items       : Routes("items")
+    object Spells      : Routes("spells")
+    object News        : Routes("news")
+    object Community   : Routes("community")
+    object Profile     : Routes("profile")
+    object Settings    : Routes("settings")
+
+    // ── Detalle ─────────────────────────────────
+    object ChampionDetail : Routes("champion_detail/{championId}") {
+        fun createRoute(championId: String) = "champion_detail/$championId"
+    }
+}
